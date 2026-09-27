@@ -13,7 +13,7 @@
 
   <li><a href="https://kubsu.ru">Главная kubsu.ru HTTPS</a></li>
 
-  <li><a href="https://www.kubsu.ru"><img src="icon.png" alt="icon" style="width: 200px"/></a></li>
+  <li><a href="https://www.kubsu.ru"><img src="icon.png" alt="icon" style="width: 200px"></a></li>
   <li><a href="page.html">Внутренняя страница</a></li>
 
   <li><a href="index1.html">Главная</a></li>
@@ -34,15 +34,18 @@
 
   <li><p>Это обычный текст с<a href="https://kubsu.ru"> контекстной ссылкой </a>внутри предложения.</p></li>
 
-  <li><img src="image.jpg" usemap="#image" width="425" height="181" alt="Карта изображения с областями КубГУ и Google">
+  <li>
+    <img src="image.jpg" usemap="#image" width="425" height="181" alt="Карта изображения с областями КубГУ и Google">
     <map name="image">
       <area shape="rect"
             coords="0,0,100,100"
-            href="https://kubsu.ru">
+            href="https://kubsu.ru"
+            alt="КубГУ">
 
       <area shape="circle"
             coords="200,100,50"
-            href="https://google.com">
+            href="https://google.com"
+            alt="Google">
     </map>
   </li>
 
@@ -50,9 +53,11 @@
 
   <li><a>Ссылка без href</a></li>
 
-  <li><a href="https://example.com" rel="запрещен переход">запрещен переход</a></li>
+  <li><a href="https://example.com" rel="nofollow">запрещен переход</a></li>
 
-  <li><a href="https://example.com" rel="запрещенную для индексации поисковиками">запрещенную для индексации поисковиками</a></li>
+  <li><a href="https://example.com" rel="nofollow">запрещенную для индексации поисковиками</a></li>
+
+  <li><a href="ftp://student:12345@ftp.example.com/file.zip">FTP-файл</a></li>
 </ul>
 
 <ol>
@@ -61,11 +66,8 @@
   <li><a href="https://google.com" title="Поисковая система">Google</a></li>
 </ol>
 
-<li><a href="ftp://student:12345@ftp.example.com/file.zip">FTP-файл</a></li>
-
 <h2 id="section1">Фрагмент страницы</h2>
 
-</section>
 <section class="content-section" id="contact" aria-labelledby="contact-title">
   <h2 id="contact-title">Форма обратной связи</h2>
   <form class="contact-form" action="#contact" method="get">
@@ -90,3 +92,4 @@
   </form>
 </section>
 </body>
+</html>
