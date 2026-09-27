@@ -1,0 +1,31 @@
+#fullname-field {
+  margin-bottom: -8px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.form-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px;
+}
+
+.form-field label {
+  font-weight: 700;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #91b4c7;
+  border-radius: 4px;
+  display: block;
+}
