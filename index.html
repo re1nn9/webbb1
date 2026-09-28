@@ -1,95 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
-  <title>re1nn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задание 1: гиперссылки и форма</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.5; margin: 0 auto; padding: 0 15px 30px; max-width: 800px; }
+    li { margin-bottom: 8px; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 500px; }
+    .form-field { display: flex; flex-direction: column; gap: 4px; }
+    .form-field label, legend { font-weight: bold; }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form input[type="date"],
+    .contact-form select,
+    .contact-form textarea { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #91b4c7; border-radius: 4px; font: inherit; }
+    .contact-form fieldset { border: 1px solid #91b4c7; border-radius: 4px; }
+    .contact-form button { align-self: flex-start; padding: 8px 20px; }
+  </style>
 </head>
 <body>
-<h1>re1nn99</h1>
-<h2>Гиперссылки: </h2>
-<ul>
-  <li><a href="http://kubsu.ru">Главная kubsu.ru</a></li>
 
-  <li><a href="https://kubsu.ru">Главная kubsu.ru HTTPS</a></li>
+<h1>Гиперссылки и форма</h1>
 
-  <li><a href="https://www.kubsu.ru"><img src="icon.png" alt="icon" style="width: 200px"></a></li>
-  <li><a href="page.html">Внутренняя страница</a></li>
+<section id="links">
+  <h2>Список гиперссылок</h2>
+  <ul>
+    <li><a href="http://kubsu.ru/">Главная kubsu.ru (HTTP)</a></li>
+    <li><a href="https://kubsu.ru/">Главная kubsu.ru (HTTPS)</a></li>
+    <li><a href="https://kubsu.ru/"><img src="icon.png" alt="КубГУ" width="100"></a></li>
+    <li><a href="/page.html">Сокращенная ссылка на внутреннюю страницу</a></li>
+    <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+    <li><a href="#section1">Ссылка на фрагмент текущей страницы</a></li>
+    <li><a href="page.html?name=Vlad&amp;surname=Zika&amp;age=18">Ссылка с тремя параметрами</a></li>
+    <li><a href="page.html?id=123">Ссылка с параметром id</a></li>
+    <li><a href="./page.html">Страница в текущем каталоге</a></li>
+    <li><a href="about/about.html">Страница в каталоге about</a></li>
+    <li><a href="../page.html">Страница уровнем выше</a></li>
+    <li><a href="../../page.html">Страница двумя уровнями выше</a></li>
+    <li><p>Это абзац с <a href="https://kubsu.ru/">контекстной ссылкой</a> внутри предложения.</p></li>
+    <li><a href="https://ru.wikipedia.org/wiki/HTML#История">Фрагмент страницы стороннего сайта</a></li>
+    <li>
+      <img src="image.jpg" width="425" height="181" usemap="#navmap" alt="Картинка со ссылками: прямоугольник ведёт на КубГУ, круг на Google">
+      <map name="navmap">
+        <area shape="rect" coords="0,0,100,100" href="https://kubsu.ru/" alt="КубГУ">
+        <area shape="circle" coords="200,100,50" href="https://google.com/" alt="Google">
+      </map>
+    </li>
+    <li><a href="">Ссылка с пустым href</a></li>
+    <li><a>Ссылка без href</a></li>
+    <li><a href="https://example.com/" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+    <li><!--noindex--><a href="https://example.com/">Ссылка, запрещенная для индексации</a><!--/noindex--></li>
+    <li>Нумерованный список ссылок:
+      <ol>
+        <li><a href="https://kubsu.ru/" title="Сайт КубГУ">КубГУ</a></li>
+        <li><a href="https://google.com/" title="Поисковая система Google">Google</a></li>
+      </ol>
+    </li>
+    <li><a href="ftp://user:password@ftp.example.com/file.zip">Файл на FTP-сервере с авторизацией</a></li>
+  </ul>
 
-  <li><a href="index1.html">Главная</a></li>
+  <h3 id="section1">Фрагмент текущей страницы</h3>
+  <p>Сюда ведёт ссылка на фрагмент текущей страницы.</p>
+</section>
 
-  <li><a href="#section1">Перейти к фрагменту</a></li>
-
-  <li><a href="page.html?name=ZinchukVlad&surname=Zika&age=18">Три параметра</a></li>
-
-  <li><a href="page.html?id=011">Параметр id</a></li>
-
-  <li><a href="page.html">Текущий каталог</a></li>
-
-  <li><a href="about.html">Каталог about</a></li>
-
-  <li><a href="page1.html">На уровень выше</a></li>
-
-  <li><a href="page.html">На два уровня выше</a></li>
-
-  <li><p>Это обычный текст с<a href="https://kubsu.ru"> контекстной ссылкой </a>внутри предложения.</p></li>
-
-  <li>
-    <img src="image.jpg" usemap="#image" width="425" height="181" alt="Карта изображения с областями КубГУ и Google">
-    <map name="image">
-      <area shape="rect"
-            coords="0,0,100,100"
-            href="https://kubsu.ru"
-            alt="КубГУ">
-
-      <area shape="circle"
-            coords="200,100,50"
-            href="https://google.com"
-            alt="Google">
-    </map>
-  </li>
-
-  <li><a href="">Пустой href</a></li>
-
-  <li><a>Ссылка без href</a></li>
-
-  <li><a href="https://example.com" rel="nofollow">запрещен переход</a></li>
-
-  <li><a href="https://example.com" rel="nofollow">запрещенную для индексации поисковиками</a></li>
-
-  <li><a href="ftp://ftp.example.com/file.zip">FTP-файл</a></li>
-</ul>
-
-<ol>
-  <li><a href="https://kubsu.ru" title="Сайт университета">kubsu.ru</a></li>
-
-  <li><a href="https://google.com" title="Поисковая система">Google</a></li>
-</ol>
-
-<h2 id="section1">Фрагмент страницы</h2>
-
-<section class="content-section" id="contact" aria-labelledby="contact-title">
-  <h2 id="contact-title">Форма обратной связи</h2>
+<section id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Форма</h2>
   <form class="contact-form" action="#contact" method="get">
-    <div class="form-field" id="fullname-field">
-      <label for="fullname">ФИО:</label>
-      <input type="text" name="fullname" id="fullname" required placeholder="Иванов Иван Иванович" pattern="^[A-Za-zA-Яа-яЁё\s]+$" title="Пожалуйста, используйте только буквы и пробелы">
-    </div>
+
     <div class="form-field">
-      <label for="email">Электронная почта</label>
-      <input id="email" name="email" type="email" autocomplete="email" required>
+      <label for="fullname">ФИО</label>
+      <input type="text" id="fullname" name="fullname" required
+             placeholder="Иванов Иван Иванович"
+             pattern="[A-Za-zА-Яа-яЁё\s\-]+"
+             title="Только буквы, пробелы и дефис">
     </div>
+
     <div class="form-field">
-      <label for="phone">Телефон:</label>
-      <input type="tel" name="phone" id="phone" pattern="[0-9+]{10,}" title="Формат: +7... или 10 цифр" required>
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required
+             placeholder="+79001234567"
+             pattern="\+?[0-9]{10,15}"
+             title="От 10 до 15 цифр, можно с плюсом в начале">
     </div>
+
     <div class="form-field">
-      <label for="message">Сообщение</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
     </div>
-    <label class="agreement"><input name="agreement" type="checkbox" required> Я согласен на обработку данных формы.</label>
-    <button type="submit">Отправить</button>
+
+    <div class="form-field">
+      <label for="birthdate">Дата рождения</label>
+      <input type="date" id="birthdate" name="birthdate" min="1900-01-01" required>
+    </div>
+
+    <fieldset>
+      <legend>Пол</legend>
+      <label><input type="radio" name="gender" value="male" required> Мужской</label>
+      <label><input type="radio" name="gender" value="female"> Женский</label>
+    </fieldset>
+
+    <div class="form-field">
+      <label for="languages">Любимый язык программирования (можно выбрать несколько)</label>
+      <select id="languages" name="languages[]" multiple size="6" required>
+        <option value="Pascal">Pascal</option>
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="PHP">PHP</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="bio">Биография</label>
+      <textarea id="bio" name="bio" rows="5"></textarea>
+    </div>
+
+    <label><input type="checkbox" name="contract" required> С контрактом ознакомлен(а)</label>
+
+    <button type="submit">Сохранить</button>
   </form>
 </section>
+
 </body>
 </html>
